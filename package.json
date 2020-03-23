@@ -1,0 +1,29 @@
+{
+  "name": "upliferewardserver",
+  "version": "1.0.0",
+  "description": "reward blockchain server for uplife 2.0 project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuongQuy/UplifeRewardServer.git"
+  },
+  "keywords": [
+    "blockchain",
+    "reward"
+  ],
+  "author": "quy.lv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuongQuy/UplifeRewardServer/issues"
+  },
+  "homepage": "https://github.com/LuongQuy/UplifeRewardServer#readme",
+  "dependencies": {
+    "ethereumjs-tx": "^1.3.7",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.5",
+    "web3": "^1.2.6"
+  }
+}
