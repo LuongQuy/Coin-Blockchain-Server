@@ -125,7 +125,7 @@ exports.withdrawEth = (req, res) => {
 
 exports.getHistory = (req, res) => {
     var email = req.body.email;
-    historyModel.findOne({email: email}, (err, result) => {
+    historyModel.find({email: email}, (err, result) => {
         return res.json(result);
     })
 }
