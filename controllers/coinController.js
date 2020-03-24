@@ -89,7 +89,7 @@ exports.withdrawEth = (req, res) => {
 
                                 var newHistoryDoc = new historyModel({
                                     email: email,
-                                    comment: 'add ' + coin + ' coin'
+                                    comment: 'withdraw ' + coin + ' coin (' + ethAmount + ' ETH)'
                                 });
                                 newHistoryDoc.save((err, result) => {console.log('newHistoryDoc ' + err)});
                                 
