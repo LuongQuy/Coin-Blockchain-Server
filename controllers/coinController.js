@@ -1,5 +1,4 @@
 const Web3 = require('web3');
-const contract_config = require('../configs/contract_config')
 const account_config = require('../configs/account_config')
 const Tx = require('ethereumjs-tx')
 const coinModel = require('../models/coin')
