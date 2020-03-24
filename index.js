@@ -11,8 +11,8 @@ app.use('/', ownerRouter);
 const database = require('./configs/database');
 mongoose.connect(database.dbStr, {
     useUnifiedTopology: true,
-    useNewUrlParser: true,
-    });
+    useNewUrlParser: true
+});
 mongoose.connection.on('error', err => console.log(err));
 
 app.listen(3000, () => console.log('Uplife Reward Server start on port 3000!'))
