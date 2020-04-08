@@ -18,7 +18,7 @@ exports.addCoin = (req, res) => {
 
     coinModel.findOne({email: email}, (err, coinDoc) => {
         if(coinDoc){
-            coinDoc.coin = parseInt(coinDoc.coin) + parseInt(coin);
+            coinDoc.coin = parseFloat(coinDoc.coin) + parseFloat(coin);
             coinDoc.save((err, result) => {
                 var newHistoryDoc = new historyModel({
                     email: email,
@@ -56,7 +56,7 @@ exports.withdrawEth = (req, res) => {
     var email = req.body.email;
     var address = req.body.address;
     var coin = req.body.coin;
-    var ethAmount = (parseFloat(coin)/1000).toString();
+    var ethAmount = coin.toString();
 
     coinModel.findOne({email: email}, (err, coinDoc) => {
         if(coinDoc){
