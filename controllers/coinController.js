@@ -31,7 +31,7 @@ exports.addCoin = (req, res) => {
         } else{
             var newCoinDoc = new coinModel({
                 email: email,
-                coin: coin
+                coin: parseFloat(coin)
             });
             newCoinDoc.save((err, result) => {
                 var newHistoryDoc = new historyModel({
