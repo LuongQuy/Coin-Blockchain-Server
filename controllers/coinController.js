@@ -68,11 +68,11 @@ exports.withdrawEth = (req, res) => {
                     web3.eth.getTransactionCount(myAccount, (err, txCount) => {
                         // Build the transaction
                         var txObjectToContract = {
-                            nonce:    String(web3.utils.toHex(txCount)).valueOf(),
-                            to:       String(address).valueOf(),
-                            value:    String(web3.utils.toHex(web3.utils.toWei(ethAmount, 'ether'))).valueOf(),
-                            gasLimit: String(web3.utils.toHex(2100000)).valueOf(),
-                            gasPrice: String(web3.utils.toHex(web3.utils.toWei('6', 'gwei'))).valueOf(),
+                            nonce:    web3.utils.toHex(txCount),
+                            to:       address,
+                            value:    web3.utils.toHex(web3.utils.toWei(ethAmount, 'ether')),
+                            gasLimit: web3.utils.toHex(2100000),
+                            gasPrice: web3.utils.toHex(web3.utils.toWei('6', 'gwei')),
                             chainId: 3
                         }
                         // Sign the transaction
