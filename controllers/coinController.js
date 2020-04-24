@@ -48,7 +48,10 @@ exports.addCoin = (req, res) => {
 
 exports.getCoin = (req, res) => {
     coinModel.findOne({email: req.body.email}, (err, result) => {
-        res.json(result);
+        if(result) return res.json(result);
+        else return res.json({
+          coin: 0
+        });
     })
 }
 
