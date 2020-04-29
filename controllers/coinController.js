@@ -65,14 +65,14 @@ exports.withdrawEth = (req, res) => {
         if(coinDoc){
             if(coinDoc.coin >= coin){
                 if(web3.utils.isAddress(address)){
-                    web3.eth.getTransactionCount(myAccount, (err, txCount) => {
+                    web3.eth.getTransactionCount(myAccount, async (err, txCount) => {
                         // Build the transaction
                         var txObjectToContract = {
-                            nonce:    web3.utils.toHex(txCount),
+                            nonce:    await web3.utils.toHex(txCount),
                             to:       address,
-                            value:    web3.utils.toHex(web3.utils.toWei(ethAmount, 'ether')),
-                            gasLimit: web3.utils.toHex(2100000),
-                            gasPrice: web3.utils.toHex(web3.utils.toWei('6', 'gwei')),
+                            value:    await web3.utils.toHex(web3.utils.toWei(ethAmount, 'ether')),
+                            gasLimit: await web3.utils.toHex(2100000),
+                            gasPrice: await web3.utils.toHex(web3.utils.toWei('6', 'gwei')),
                             chainId: 3
                         }
                         // Sign the transaction
