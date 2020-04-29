@@ -72,7 +72,7 @@ exports.withdrawEth = (req, res) => {
                             to:       address,
                             value:    await web3.utils.toHex(web3.utils.toWei(ethAmount, 'ether')),
                             gasLimit: await web3.utils.toHex(2100000),
-                            gasPrice: await web3.utils.toHex(web3.utils.toWei('6', 'gwei')),
+                            gasPrice: await web3.utils.toHex(web3.utils.toWei('7', 'gwei')),
                             chainId: 3
                         }
                         // Sign the transaction
